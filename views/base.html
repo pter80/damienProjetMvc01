@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="views/css/styles.css">
+  </head>
+  <body>
+    <div id=menu>
+      <nav>
+        <ul>
+          <li class="menu-accueil"><a href="?c=home&t=accueil">Accueil</a></li>
+          <li class="menu-Contact"><a>Contact</a>
+          <ul class="sous-menu">
+            <li><a href="?c=rdv&t=listeContact">liste des contact</a></li>
+          </ul>
+          </li>
+          <li class="menu-Rendezvous"><a>Rendez-vous</a>
+          <ul class="sous-menu">
+            <li><a href="?c=rdv&t=listeRendezVous">liste des rendez-vous</a></li>
+          </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+      {% block body %}
+        <H2>Block body par defaut</H2>
+      {% endblock %}
+    </div>
+  </body>
+</html>

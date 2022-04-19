@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block body %}
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css" />
+
+    <h1>Creation d'un rendez-vous </h1>
+    <form action="?c=rdv&t=addRendezVous" method="POST">
+        <table>
+            <tr>
+                <td>date et heure du début du rendez vous</td>
+                <td><input type="text" name="dateDebut" id="dateDebut" placeholder="Date et heure du rendez-vous"></td>
+            </tr>
+            <tr>
+                <td>date et heure de la fin du rendez vous</td>
+                <td><input type="text" name="dateFin" id="dateFin" placeholder="Date et heure du rendez-vous"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="bouton" value="soumettre"></td>
+            </tr>
+        </table>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
+        <script>
+        jQuery(function($) {
+            $("#dateDebut").datetimepicker();
+        });
+        </script>
+        <script>
+        jQuery(function($) {
+            $("#dateFin").datetimepicker();
+        });
+        </script>
+    </form>
+{% endblock %}
+

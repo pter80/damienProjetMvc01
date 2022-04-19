@@ -1,0 +1,25 @@
+#menu {
+    border: 1px solid red;
+}
+#page {
+    border: 1px solid green;
+    height: 450px;
+}
+#entete {
+    background: #DAF7A6;
+    
+}
+
+#corps {
+    
+}
+li {
+  float: left;  
+}
+#footer {
+    position: relative;
+    top: 350px;
+    background: #2916DF;
+    color: white;
+}
+

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block entete %}
+    <h1>Création d'un fruit</h1>
+{% endblock %}
+{% block body %}
+    <form action="?c=fruits&t=add" method="post">
+       <input name="newFruit">
+       <button type="submit">Ajoute</button>
+    </form>
+
+ 
+ <a href="?c=Fruits&t=liste">Annule</a>
+{% endblock %}

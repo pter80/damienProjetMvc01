@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1>Liste de fruits</h1>
+{% endblock %}
+
+{% block pter %}
+ <ul>
+ {% for user in users %}
+     <li>{{ user }}</li>
+ {% endfor %}
+ </ul>
+{% endblock %}

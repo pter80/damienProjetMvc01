@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+    <table id="example" class="display">
+        <thead>
+            <tr>
+            {% for champ in entete %}
+                <th>
+                    {{ champ }}        
+                </th>
+            {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in result %}
+                <tr>
+                {% for champ in row %}
+                <td>
+                    {{ champ }}
+                </td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script>
+        $(document).ready( function () {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+                
+            })
+        });
+    </script>
+{% endblock %}

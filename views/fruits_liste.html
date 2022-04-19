@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block entete %}
+    <h1>Liste de fruits</h1>
+{% endblock %}
+
+{% block body %}
+ <ul>
+ {% for fruit in fruits %}
+     <li>{{ fruit }}</li>
+ {% endfor %}
+ </ul>
+ <a href="?c=Fruits&t=create">Add</a>
+{% endblock %}
