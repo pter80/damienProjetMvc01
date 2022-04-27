@@ -98,7 +98,8 @@ class Rdv
      */
     public function getDateDebut()
     {
-        return $this->dateDebut;
+        //return DateTime::createFromFormat("j/m/Y H:i",$this->dateDebut);
+        return $this->dateDebut->format("d/m/Y H:i");
     }
 
     /**
@@ -123,6 +124,6 @@ class Rdv
      */
     public function getDateFin()
     {
-        return $this->dateFin;
+        return $this->dateFin->format("d/m/Y H:i");
     }
 }

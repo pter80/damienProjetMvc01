@@ -201,7 +201,7 @@ class Contact
         if($externe==null){
             $this->externe = false;
         } else {
-            $this->externe = $externe;
+            $this->externe = true;
         }
         return $this;
     }
@@ -213,7 +213,13 @@ class Contact
      */
     public function getExterne()
     {
-        return $this->externe;
+        if($this->externe)
+        {
+            return 'vrai';
+        } else {
+            return 'faux';
+        }
+        
     }
 
     /**
@@ -237,6 +243,11 @@ class Contact
      */
     public function getInterne()
     {
-        return $this->interne;
+        if($this->interne)
+        {
+            return 'vrai';
+        } else {
+            return 'faux';
+        }
     }
 }

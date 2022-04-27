@@ -2,20 +2,16 @@
 
 {% block body %}
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.datatables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/datatables.bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/datatables.bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jqc-1.12.4/dt-1.11.5/datatables.min.css"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jqc-1.12.4/dt-1.11.5/datatables.min.js"></script>
-    
     </br>
     <strong>Liste des Rendez-Vous</strong> :</br>
-    <br>
+    </br>
     <table id="tableliste" class="table table-striped table-bordered">
         <thead>
             <tr>
-                <td>Date de Début du Rendez-vous</td>
+                <td>Nom</td>
+                <td>Prénom</td>
+                <td>Email</td>
+                <td>Date de Debut du Rendez-vous</td>
                 <td>Date de Fin du Rendez-vous</td>
             </tr>
         </thead>
@@ -23,13 +19,16 @@
         </tbody>
     </table>  
     <script type="text/javascript">
-    var resultrdv = {{ RendezVous|raw }}
+    var resultrdv = {{ rendezvous|raw }}
     console.log(resultrdv)
         $('#tableliste').DataTable( {
             data : resultrdv,
             "columns": [
-                { "data": "DateDebut" },
-                { "data": "DateFin" },
+                { "data": "contact.nom" },
+                { "data": "contact.prenom" },
+                { "data": "contact.email" },
+                { "data": "dateDebut" },
+                { "data": "dateFin" },
             ]
         } );
     </script>

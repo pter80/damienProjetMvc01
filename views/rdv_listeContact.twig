@@ -1,14 +1,6 @@
 {% extends "base.html" %}
 
 {% block body %}
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.datatables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/datatables.bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/datatables.bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jqc-1.12.4/dt-1.11.5/datatables.min.css"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jqc-1.12.4/dt-1.11.5/datatables.min.js"></script>
-    
     </br>
     <strong>Liste des contacts</strong> :</br>
     <br>
@@ -29,7 +21,7 @@
     </table>  
     <script type="text/javascript">
     var resultcontact = {{ contacts|raw }}
-    console.log(resultcontact)
+    //console.log(resultcontact)
         $('#tableliste').DataTable( {
             data : resultcontact,
             "columns": [

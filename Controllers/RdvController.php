@@ -29,18 +29,15 @@ class RdvController extends Controller
        ;
     $contacts = $qb->getQuery()->getResult();
     //var_dump($contacts);
-    echo $this->twig->render('rdv_listeContact.twig', ['contacts' => $serializer->serialize($contacts, 'json')],);
+    echo $this->twig->render('rdv_listeContact.twig', ['contacts' => $serializer->serialize($contacts, 'json')]);
   }
   
   public function listeRendezVous($params)
   {
-    
     $encoders = [new JsonEncoder()];
     $normalizers = [new ObjectNormalizer()];
     $serializer = new Serializer($normalizers, $encoders);
     $em=$params['em'];
-    
-    
     //$objetPdo = new \PDO('mysql:host=localhost;dbname=damien_rdv','damien','bts2020');
     //$doStat = $objetPdo->prepare('SELECT * FROM contact');
     //$executeIsOk = $pdoStat->execute();
@@ -49,21 +46,27 @@ class RdvController extends Controller
        ->from('Entity\Rdv', 'r')
        ;
     $rendezvous = $qb->getQuery()->getResult();
-    
-    
     //var_dump($rendezvous);
-    echo $this->twig->render('rdv_listeRendezVous.twig', ['rendezvous' => $serializer->serialize($rendezvous, 'json')],);
-    
+    echo $this->twig->render('rdv_listeRendezVous.twig', ['rendezvous' => $serializer->serialize($rendezvous, 'json')]);
   }
   
   public function createRendezVous($params) {
     $em = $params["em"];
-    echo $this->twig->render('rdv_createRendezVous.twig');
+    $qb = $em->createQueryBuilder();
+    $qb->select('c')
+       ->from('Entity\Contact', 'c')
+       ;
+    $contacts = $qb->getQuery()->getResult();
+    echo $this->twig->render('rdv_createRendezVous.twig', ['contacts' => $contacts]);
   }
   
   public function addRendezVous($params) {
     $em = $params["em"];
+    //var_dump($params['post']['contact']);die;
+    //recherche du contact dans la base de données
+    $contact = $em->find('Entity\Contact', $params['post']['contact']);
       $rdv= new Rdv();
+      $rdv->setContact($contact);
       $rdv->setDateDebut($params['post']['dateDebut']);
       $rdv->setDateFin($params['post']['dateFin']);
       $em->persist($rdv);

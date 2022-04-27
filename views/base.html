@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="views/css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jqc-1.12.4/dt-1.11.5/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jqc-1.12.4/dt-1.11.5/datatables.min.js"></script>
   </head>
   <body>
     <div id=menu>
@@ -24,7 +27,9 @@
     </div>
     <div>
       {% block body %}
-        <H2>Block body par defaut</H2>
+        <h1>A propos du site :</h1>
+        <p>Ce site a pour but de permettre de créer des Rendez-Vous entre un client et une personne responsable d'une entreprise</p>
+        <img src="https://www.dynamique-entreprendre.com/wp-content/uploads/2018/01/organisation-rendez-vous-1.jpg">
       {% endblock %}
     </div>
   </body>
